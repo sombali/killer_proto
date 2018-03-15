@@ -24,14 +24,30 @@ public abstract class Player extends Element{
 
     }
 
+    //szekvencia alapjan kitoltottem @Bazsi
     public boolean hit(Pushable pushable, Direction direction) {
-        return false;
+        Field nextfield = getField().getNeighbors(direction);
+        Element element = nextfield.getElement();
+
+        if(element != null) {
+            this.getField().removeElement(this);
+            die();
+        } else {
+            step(nextfield);
+        }
+        return true;
     }
 
     public  boolean hit(Player player, Direction direction) {
         return false;
     }
 
-    public void step(Field field){}
+    //ideraktam a Workerbol a stepet, gondolvan hogy csak valositsa meg ezt @Bazsi
+    public void step(Field nextField) {
+        field.removeElement(this);
+        nextField.acceptElement(this);
+        this.setField(nextField);
+        nextField.stepOnIt(this);
+    }
 
 }

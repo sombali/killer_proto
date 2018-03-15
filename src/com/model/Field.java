@@ -38,8 +38,10 @@ public class Field {
 
     }
 
+    //@Bazsi voltam szotyola van fiukaaak
     public void acceptElement(Element element) {
-
+        element.setField(this);
+        setElement(element);
     }
 
     public void removeElement(Element element) {
@@ -48,7 +50,7 @@ public class Field {
 
     //itt adjuk meg milyen szomszedos mezo van
     public Field getNeighbors(Direction direction) {
-        Scanner infield= new Scanner(System.in);
+        Scanner infield = new Scanner(System.in);
         System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole?");
         int pelda=infield.nextInt();
         if(pelda==1) {
