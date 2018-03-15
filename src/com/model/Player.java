@@ -25,7 +25,7 @@ public abstract class Player extends Element{
     }
 
     public boolean hit(Pushable pushable, Direction direction) {
-
+        return false;
     }
 
     public  boolean hit(Player player, Direction direction) {
