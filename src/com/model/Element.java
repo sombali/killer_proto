@@ -14,4 +14,11 @@ public class Element {
     public boolean hit(Element element, Direction direction) {
         return true;
     }
+    public boolean hit(Player player,Direction direction){
+        return true;
+    }
+    public boolean hit(Pushable boxes,Direction direction){
+        return true;
+    }
+
 }

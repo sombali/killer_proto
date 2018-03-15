@@ -32,6 +32,6 @@ public abstract class Player extends Element{
         return false;
     }
 
-
+    public void step(Field field){}
 
 }
