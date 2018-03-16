@@ -19,11 +19,17 @@ public abstract class Player extends Element{
     }
 
     public void surrender() {
-
+        System.out.println("-->[Player: player1].surrend");
+        System.out.println("Player1 LOST!");
+        System.out.println("Player2 WON!");
+        System.out.println("<-----");
     }
 
     public void win() {
-
+        System.out.println("-->[Player: player1].win");
+        System.out.println("Player1 WIN!");
+        System.out.println("Player2 LOST!");
+        System.out.println("<-----");
     }
 
     //szekvencia alapjan kitoltottem @Bazsi
@@ -47,10 +53,12 @@ public abstract class Player extends Element{
 
     //ideraktam a Workerbol a stepet, gondolvan hogy csak valositsa meg ezt @Bazsi (Zsir)
     public void step(Field nextField) {
+        System.out.println("->[Player player].step");
         field.removeElement(this);
         nextField.acceptElement(this);
       //this.setField(nextField);
         nextField.stepOnIt(this);
+        System.out.println("<-");
     }
 
 }

@@ -1,11 +1,14 @@
 package com.model;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Field {
     private Element element;
     Direction direction;
-    private Field[] neighbors;
+    private Map<Direction, Field> fieldMap = new HashMap<>();
+    private Warehouse warehouse;
 
     //Itt adom meg hogy mi van a szomszedos mezon , egyszeru if else (meg nincs kesz)
     public Element getElement() {
@@ -63,26 +66,30 @@ public class Field {
     //itt adjuk meg milyen szomszedos mezo van
     public Field getNeighbors(Direction direction) {
         Scanner infield = new Scanner(System.in);
-        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-TrapDoor?");
+        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-TrapDoor, 4-Switch?");
         int pelda = infield.nextInt();
         System.out.println("-->[Field :f1].getNeighbour()");
         System.out.println("<--[Field :f2]");
         if(pelda==1) {
-            return new Field();
+            fieldMap.put(direction, new Field());
+            return fieldMap.get(direction);
         }
         else if(pelda==2) {
-            return new Hole();
+            fieldMap.put(direction, new Hole());
+            return fieldMap.get(direction);
         }
         else if(pelda == 3) {
-            System.out.println();
-            return new TrapDoor();
+            fieldMap.put(direction, new TrapDoor());
+            return fieldMap.get(direction);
         }
         //@Ákos
         if(pelda==4) {
-            return new Switch();
+            fieldMap.put(direction, new Switch());
+            return fieldMap.get(direction);
         }
         else
-            return new Field();
+            fieldMap.put(direction, new Field());
+            return fieldMap.get(direction);
     }
 
     public void setNeighbors(Direction direction, Field field) {
