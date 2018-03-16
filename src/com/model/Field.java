@@ -40,12 +40,14 @@ public class Field {
 
     //@Bazsi voltam szotyola van fiukaaak
     public void acceptElement(Element element) {
+        System.out.println("-->[Field :f2].acceptElement(player)");
         element.setField(this);
+        System.out.println("<-----");
         setElement(element);
     }
 
     public void removeElement(Element element) {
-
+        System.out.println("-->[Field :f1].removeElement(player)");
     }
 
     //itt adjuk meg milyen szomszedos mezo van
@@ -54,7 +56,7 @@ public class Field {
         System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole?");
         int pelda=infield.nextInt();
         if(pelda==1) {
-            System.out.println("[Field :f1].getNeighbour()");
+            System.out.println("-->[Field :f1].getNeighbour()");
             System.out.println("<--[Field :f2]");
             return new Field();
         }
@@ -69,14 +71,17 @@ public class Field {
     }
 
     public void stepOnIt(Element element) {
-
+            System.out.println("-->[Field f2].stepOnIt(e)");
+            System.out.println("<----");
     }
 
     public void stepOnIt(Pushable pushable) {
-
+        System.out.println("-->[Field f2].stepOnIt(e)");
+        System.out.println("<----");
     }
 
     public void stepOnIt(Player player) {
-
+        System.out.println("-->[Field f2].stepOnIt(e)");
+        System.out.println("<----");
     }
 }

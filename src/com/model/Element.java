@@ -8,6 +8,7 @@ public class Element {
     }
 
     public void setField(Field field) {
+        System.out.println("       -->.setField(f2) = Sikeres lepes");
         this.field = field;
     }
 

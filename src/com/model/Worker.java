@@ -23,15 +23,4 @@ public class Worker extends Player {
             step(nextfield);
         }
     }
-
-    //ezt atraktam a Playerbe, szebbnek talalom ugy, de lehet tevedek @Bazsi
-    @Override
-    public void step(Field nextField)
-    {
-        //Worker me = new Worker();
-//        field.removeElement(this);
-//        nextField.acceptElement(this);
-//        this.setField(nextField);
-//        nextField.stepOnIt(this);
-    }
 }

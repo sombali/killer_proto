@@ -25,6 +25,7 @@ public abstract class Player extends Element{
     }
 
     //szekvencia alapjan kitoltottem @Bazsi
+    //az egy dolog de ki is kene iratni draga Bazsi @Szili
     public boolean hit(Pushable pushable, Direction direction) {
         Field nextfield = getField().getNeighbors(direction);
         Element element = nextfield.getElement();
@@ -42,11 +43,11 @@ public abstract class Player extends Element{
         return false;
     }
 
-    //ideraktam a Workerbol a stepet, gondolvan hogy csak valositsa meg ezt @Bazsi
+    //ideraktam a Workerbol a stepet, gondolvan hogy csak valositsa meg ezt @Bazsi (Zsir)
     public void step(Field nextField) {
         field.removeElement(this);
         nextField.acceptElement(this);
-        this.setField(nextField);
+      // this.setField(nextField);
         nextField.stepOnIt(this);
     }
 
