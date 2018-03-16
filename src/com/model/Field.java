@@ -1,5 +1,7 @@
 package com.model;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Scanner;
 
 public class Field {
@@ -46,22 +48,38 @@ public class Field {
         setElement(element);
     }
 
-    public void removeElement(Element element) {
+//    public void removeElement(Element element) {
+//        System.out.println("-->[Field :f1].removeElement(player)");
+//    }
+    
+    public void removeElement(Player player) {
         System.out.println("-->[Field :f1].removeElement(player)");
     }
+
+    public void removeElement(Pushable pushable) {
+        System.out.println("-->[Field :f1].removeElement(pushable)");
+    }
+
+
 
     //itt adjuk meg milyen szomszedos mezo van
     public Field getNeighbors(Direction direction) {
         Scanner infield = new Scanner(System.in);
+<<<<<<< HEAD
         System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-Switch?");
         int pelda=infield.nextInt();
+=======
+        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-TrapDoor?");
+        int pelda = infield.nextInt();
+        System.out.println("-->[Field :f1].getNeighbour()");
+        System.out.println("<--[Field :f2]");
+>>>>>>> 24a23e1ccb672ea49336b7805352291637a64328
         if(pelda==1) {
-            System.out.println("-->[Field :f1].getNeighbour()");
-            System.out.println("<--[Field :f2]");
             return new Field();
         }
         if(pelda==2)
             return new Hole();
+<<<<<<< HEAD
 
         //@Ákos
         if(pelda==3) {
@@ -69,6 +87,11 @@ public class Field {
             System.out.println("<--[Switch :f2]");
 
             return new Switch();
+=======
+        else if(pelda == 3) {
+            System.out.println();
+            return new TrapDoor();
+>>>>>>> 24a23e1ccb672ea49336b7805352291637a64328
         }
         else
             return new Field();
