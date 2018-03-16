@@ -11,6 +11,7 @@ public class Main {
         //testPlayer.setField(pelda); //Beallitom azt a mezot amin MOST van a munkas = egy sima mezore
         //pelda.setElement(testPlayer);//es Beallitom a field elemntjet a munkasra
 
+
         Game game = new Game();
         game.startGame();
         //Egyszeru menu

@@ -1,5 +1,7 @@
 package com.model;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Scanner;
 
 public class Field {
@@ -46,22 +48,36 @@ public class Field {
         setElement(element);
     }
 
-    public void removeElement(Element element) {
+//    public void removeElement(Element element) {
+//        System.out.println("-->[Field :f1].removeElement(player)");
+//    }
+    
+    public void removeElement(Player player) {
         System.out.println("-->[Field :f1].removeElement(player)");
     }
+
+    public void removeElement(Pushable pushable) {
+        System.out.println("-->[Field :f1].removeElement(pushable)");
+    }
+
+
 
     //itt adjuk meg milyen szomszedos mezo van
     public Field getNeighbors(Direction direction) {
         Scanner infield = new Scanner(System.in);
-        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole?");
-        int pelda=infield.nextInt();
+        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-TrapDoor?");
+        int pelda = infield.nextInt();
+        System.out.println("-->[Field :f1].getNeighbour()");
+        System.out.println("<--[Field :f2]");
         if(pelda==1) {
-            System.out.println("-->[Field :f1].getNeighbour()");
-            System.out.println("<--[Field :f2]");
             return new Field();
         }
         if(pelda==2)
             return new Hole();
+        else if(pelda == 3) {
+            System.out.println();
+            return new TrapDoor();
+        }
         else
             return new Field();
     }

@@ -47,7 +47,7 @@ public abstract class Player extends Element{
     public void step(Field nextField) {
         field.removeElement(this);
         nextField.acceptElement(this);
-      // this.setField(nextField);
+      //this.setField(nextField);
         nextField.stepOnIt(this);
     }
 
