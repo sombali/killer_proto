@@ -10,11 +10,13 @@ public class Worker extends Player {
         //ez hivodik meg , itt hivom meg a metodusokat nezzetek a szekvenciakat , az fog segiteni.
 
         Field nextfield =  getField().getNeighbors(direction);
-        Element nextElement = getField().getElement();
+        Element nextElement = nextfield.getElement();
 
         //Ez se fog majd kelleni de most KELL
-        nextElement.setTestField(nextfield);
         nextfield.setElement(nextElement);
+        if(nextElement!=null)
+        nextElement.setTestField(nextfield);
+
 
         boolean allow;
         if(nextElement != null) {

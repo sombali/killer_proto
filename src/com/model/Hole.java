@@ -5,6 +5,7 @@ public class Hole extends Field{
     //Ugye
     @Override
     public Element getElement(){
+
         return null;
     }
     @Override

@@ -10,7 +10,7 @@ public class TrapDoor extends Hole {
 
 
     @Override
-    public void removeElement(Player player) {
+    public void removeElement(Pushable pushable) {
         System.out.println("-->[Field :f2].removeElement(player)");
     }
 
@@ -35,7 +35,7 @@ public class TrapDoor extends Hole {
             System.out.println("<--[return null]");
             return null;
         } else if (x == 2) {
-            return super.getElement();
+            return new Field().getElement();
         } else {
             return null;
         }

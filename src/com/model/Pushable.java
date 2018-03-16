@@ -6,18 +6,22 @@ public abstract class Pushable extends Element{
     //@Bazsi voltam haligali
     public boolean hit(Player player, Direction direction) {
         System.out.println("-->[Pushable: pushable].hit(player,d)");
-        System.out.println("%%%%%" + getField());
+
 
         Field nextField = getField().getNeighbors(direction);
         Element element1 = nextField.getElement();
 
         //Elmagyarazom majd ez mi , kell azert mert maskepp nem lesz jo.
         nextField.setElement(element1);
+        if(element1!=null)
         element1.setTestField(nextField);
 
         boolean allowed = true;
         if(element1 != null) {
             allowed = element1.hit(this, direction);
+            if(allowed == true) {
+                step(nextField);
+            }
         } else {
             step(nextField);
             return true;
@@ -28,17 +32,21 @@ public abstract class Pushable extends Element{
 
     public boolean hit(Pushable pushable, Direction direction) {
         System.out.println("-->[Pushable: pushable].hit(pushable,d)");
-        System.out.println("%%%%%" + getField());
+
         Field nextField = getField().getNeighbors(direction);
         Element element1 = nextField.getElement();
 
         //Elmagyarazom majd ez mi , kell azert mert maskepp nem lesz jo.
         nextField.setElement(element1);
+        if(element1!=null)
         element1.setTestField(nextField);
 
         boolean allowed = true;
         if(element1 != null) {
             allowed = element1.hit(this, direction);
+            if(allowed == true) {
+                step(nextField);
+            }
         } else {
             step(nextField);
             return true;
