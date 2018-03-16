@@ -6,5 +6,6 @@ public class Box extends Pushable{
     public boolean hit(Element element, Direction direction) {
         return super.hit(element, direction);
     }
+
 }
 

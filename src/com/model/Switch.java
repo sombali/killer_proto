@@ -21,8 +21,8 @@ public class Switch extends Field {
 
     //Ezis Bazsa
     @Override
-    public void removeElement(Element element) {
-        super.removeElement(element);
+    public void removeElement(Player player) {
+        super.removeElement(player);
         trapDoor.switchState();
     }
 }

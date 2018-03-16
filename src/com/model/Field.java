@@ -51,7 +51,7 @@ public class Field {
 //    public void removeElement(Element element) {
 //        System.out.println("-->[Field :f1].removeElement(player)");
 //    }
-    
+
     public void removeElement(Player player) {
         System.out.println("-->[Field :f1].removeElement(player)");
     }

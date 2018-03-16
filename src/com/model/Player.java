@@ -9,7 +9,9 @@ public abstract class Player extends Element{
     }
 
     public void die() {
-
+        System.out.println("-->[Player].die");
+        System.out.println("YOU DIED!");
+        System.out.println("<-----");
     }
 
     public void addPoints(int point) {
