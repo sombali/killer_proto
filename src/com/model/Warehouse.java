@@ -12,6 +12,7 @@ public class Warehouse {
 
 
     public void initialize() {
+        System.out.println("Munkas beallitasa elso mezore: ");
         this.fields = new ArrayList<>();
         Field playerField = new Field();
         createPlayer();

@@ -35,7 +35,7 @@ public class TrapDoor extends Hole {
             System.out.println("<--[return null]");
             return null;
         } else if (x == 2) {
-            return super.getElement();
+            return new Field().getElement();
         } else {
             return null;
         }
@@ -43,9 +43,12 @@ public class TrapDoor extends Hole {
 
 
     public void switchState() {
+        System.out.println("[TrapDoor :td].switchState()");
         if(state.equals(TrapDoorState.CLOSED)) {
+            System.out.println("TrapDoor -> OPENED");
             state = TrapDoorState.OPENED;
         } else {
+            System.out.println("TrapDoor -> OPENED");
             state = TrapDoorState.CLOSED;
         }
     }

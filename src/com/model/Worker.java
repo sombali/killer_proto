@@ -8,19 +8,26 @@ public class Worker extends Player {
 
         super.move(direction);
         //ez hivodik meg , itt hivom meg a metodusokat nezzetek a szekvenciakat , az fog segiteni.
-        //Field nextfield =   field.getNeighbors(Direction.FIRST);
-        Field nextfield =   getField().getNeighbors(direction); //parameterbne ugyis atadjuk, ez nem eleg? @Bazsi
+
+        Field nextfield =  getField().getNeighbors(direction);
         Element nextElement = nextfield.getElement();
-        //Mivel nem taroljuk onmagunkat sehol ezert mindig mikor atadjuk magunkat paramterbe
-        //letre kell hozzunk mindig egy peldanyt :(
-        //Worker myself = new Worker();
-        //annak az elementnek a hit fuggvenyet hivjuk meg ami a szomszedos mezon van , parameterul pedig magunkat adjuk at
+
+        //Ez se fog majd kelleni de most KELL
+        if(nextElement != null) {
+            nextElement.setTestField(nextfield);
+            nextfield.setElement(nextElement);
+        }
+
         boolean allow;
         if(nextElement != null) {
-            //allow =  nextElement.hit(myself, Direction.FIRST);
-            allow =  nextElement.hit(this, Direction.FIRST); //szerintem a this mukodik, nem kell uj worker @Bazsi
+            allow =  nextElement.hit(this, Direction.FIRST);
+            if(allow==true){
+                step(nextfield);
+            }
         } else {
             step(nextfield);
         }
+
+
     }
 }
