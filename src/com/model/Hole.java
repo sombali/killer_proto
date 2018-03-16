@@ -2,6 +2,11 @@ package com.model;
 
 public class Hole extends Field{
 
+    //Ugye
+    @Override
+    public Element getElement(){
+        return null;
+    }
     @Override
     public void stepOnIt(Element element) {
         super.stepOnIt(element);
@@ -16,6 +21,9 @@ public class Hole extends Field{
 
     @Override
     public void stepOnIt(Player player) {
-        super.stepOnIt(player);
+        System.out.println("->[Hole: h].stepOnIt(player)");
+        removeElement(player);
+        player.die();
+        System.out.println("<-");
     }
 }

@@ -1,7 +1,5 @@
 package com.model;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.util.Scanner;
 
 public class Field {
@@ -72,11 +70,16 @@ public class Field {
         if(pelda==1) {
             return new Field();
         }
-        if(pelda==2)
+        else if(pelda==2) {
             return new Hole();
+        }
         else if(pelda == 3) {
             System.out.println();
             return new TrapDoor();
+        }
+        //@Ákos
+        if(pelda==4) {
+            return new Switch();
         }
         else
             return new Field();

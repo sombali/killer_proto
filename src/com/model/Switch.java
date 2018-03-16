@@ -5,6 +5,7 @@ public class Switch extends Field {
     private TrapDoor trapDoor;
 
     public TrapDoor getTrapDoor() {
+        System.out.println("-->[Switch s].getTrapDoor()");
         return trapDoor;
     }
 

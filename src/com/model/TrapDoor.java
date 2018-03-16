@@ -30,16 +30,17 @@ public class TrapDoor extends Hole {
     public Element getElement() {
         System.out.println("Nyitva van a trapdoor? 1-Igen, 2-Nem");
         x = in.nextInt();
-        if(x == 1) {
+        if (x == 1) {
             System.out.println("-->[Field f2].getElement()");
             System.out.println("<--[return null]");
             return null;
-        } else if(x == 2) {
+        } else if (x == 2) {
             return super.getElement();
         } else {
             return null;
         }
     }
+
 
     public void switchState() {
         if(state.equals(TrapDoorState.CLOSED)) {
