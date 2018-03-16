@@ -53,7 +53,7 @@ public class Field {
     //itt adjuk meg milyen szomszedos mezo van
     public Field getNeighbors(Direction direction) {
         Scanner infield = new Scanner(System.in);
-        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole?");
+        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-Switch?");
         int pelda=infield.nextInt();
         if(pelda==1) {
             System.out.println("-->[Field :f1].getNeighbour()");
@@ -62,6 +62,14 @@ public class Field {
         }
         if(pelda==2)
             return new Hole();
+
+        //@Ákos
+        if(pelda==3) {
+            System.out.println("-->[Field :f1].getNeighbour");
+            System.out.println("<--[Switch :f2]");
+
+            return new Switch();
+        }
         else
             return new Field();
     }
