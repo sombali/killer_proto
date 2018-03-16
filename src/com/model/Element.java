@@ -12,13 +12,17 @@ public class Element {
         this.field = field;
     }
 
+    //ezt a szkeleton utan torolni kell!!!!
+    public void setTestField(Field field){
+        this.field = field;
+    }
     public boolean hit(Element element, Direction direction) {
         return true;
     }
     public boolean hit(Player player,Direction direction){
         return true;
     }
-    public boolean hit(Pushable boxes,Direction direction){
+    public boolean hit(Pushable pushable,Direction direction){
         return true;
     }
 

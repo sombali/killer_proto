@@ -37,6 +37,7 @@ public abstract class Player extends Element{
             die();
         } else {
             step(nextfield);
+            return true;
         }
         return true;
     }

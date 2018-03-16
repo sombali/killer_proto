@@ -10,24 +10,31 @@ public class Field {
     //Itt adom meg hogy mi van a szomszedos mezon , egyszeru if else (meg nincs kesz)
     public Element getElement() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Mi van a szomszedos mezon? 1-Fal , 2-Doboz ,3-Semmi");
+        System.out.println("Mi van a szomszedos mezon? 1-Fal, 2-Doboz, 3-Oszlop, 4-Semmi, 5-Munkas");
         int x= in.nextInt();
-
+        System.out.println("-->[Field: f2].getElement()");
         if(x==1) {
-            System.out.println("-->[Field f2].getElement()");
-            System.out.println("<--[Wall :w]");
+            System.out.println("<--[Wall: w]");
             return new Wall();
 
         }
         else if(x==2) {
-            System.out.println("-->[Field: f2].getElement()");
             System.out.println("<--[Box: b]");
             return new Box();
         }
-        else if(x==3) {
+        else if(x==3){
+            System.out.println("<--[Column: c]");
+            return new Column();
+        }
+        else if(x==4) {
             return null;
         }
-        return element;
+        else if(x==5){
+            System.out.println("<--[Worker: w]");
+            return new Worker();
+
+        }
+        return null;
     }
 
     public void setElement(Element element) {
@@ -63,23 +70,28 @@ public class Field {
     //itt adjuk meg milyen szomszedos mezo van
     public Field getNeighbors(Direction direction) {
         Scanner infield = new Scanner(System.in);
-        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-TrapDoor?");
+        System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-TrapDoor, 4-Switch, 5-TargetField?");
         int pelda = infield.nextInt();
-        System.out.println("-->[Field :f1].getNeighbour()");
-        System.out.println("<--[Field :f2]");
+        System.out.println("-->[Field: f1].getNeighbour()");
         if(pelda==1) {
+            System.out.println("<--[Field: f2]");
             return new Field();
         }
         else if(pelda==2) {
+            System.out.println("<--[Hole: h]");
             return new Hole();
         }
         else if(pelda == 3) {
-            System.out.println();
+            System.out.println("<--[TrapDoor: td]");
             return new TrapDoor();
         }
-        //@Ákos
-        if(pelda==4) {
+        else if(pelda==4) {
+              System.out.println("<--[Switch: sw]");
             return new Switch();
+        }
+        else if(pelda==5){
+              System.out.println("<--[TargetField: tf]");
+              return new TargetField();
         }
         else
             return new Field();
@@ -103,4 +115,7 @@ public class Field {
         System.out.println("-->[Field f2].stepOnIt(e)");
         System.out.println("<----");
     }
+
+
+
 }
