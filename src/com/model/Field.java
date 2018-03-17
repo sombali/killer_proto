@@ -4,22 +4,53 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * A pályán lévő mezőket reprezentáló osztály
+ *
+ * A mező ismeri szomszédos mezőit négy irányban, a rajta álló elemet.
+ */
 public class Field {
+
+    /**
+     * A mezőn álló elem
+     */
     private Element element;
+
+    /**
+     * Egy szomszédo mező iránya
+     */
     Direction direction;
+
+    /**
+     * A szomszédos mezők, irány szerint tárolva
+     */
     private Map<Direction, Field> fieldMap = new HashMap<>();
+
+    /**
+     * A mezőt tartalmazó pálya
+     */
     private Warehouse warehouse;
 
-
+    /**
+     * Beállítja a kívánt pályát a mezőnek
+     * @param warehouse a mezőt tartalmazó pálya
+     */
     public void setWarehouse(Warehouse warehouse) {
         this.warehouse = warehouse;
     }
 
+    /**
+     * Megadja a mezőhöz tartozó pályát
+     * @return mezőhöz tartozó pálya
+     */
     public Warehouse getWarehouse() {
         return warehouse;
     }
 
-    //Itt adom meg hogy mi van a szomszedos mezon , egyszeru if else (meg nincs kesz)
+    /**
+     * Megadja a mezőn jelenleg álló elemet
+     * @return mezőn álló elem
+     */
     public Element getElement() {
         Scanner in = new Scanner(System.in);
         System.out.println("Mi van a szomszedos mezon? 1-Fal, 2-Doboz, 3-Oszlop, 4-Semmi, 5-Munkas");
@@ -48,6 +79,10 @@ public class Field {
         return null;
     }
 
+    /**
+     * Beállítja a hozzátartozó elemet
+     * @param element a hozzátartozó elem
+     */
     public void setElement(Element element) {
         this.element = element;
     }
@@ -56,7 +91,10 @@ public class Field {
 
     }
 
-    //@Bazsi voltam szotyola van fiukaaak
+    /**
+     * A mezőre elem lép, beállítja a saját elemének, az elem mezőjének pedig beállítja saját magát
+     * @param element a mezőre lépni kívánó elem
+     */
     public void acceptElement(Element element) {
         System.out.println("-->[Field :f2].acceptElement(element)");
         element.setField(this);
@@ -68,17 +106,28 @@ public class Field {
 //        System.out.println("-->[Field :f1].removeElement(player)");
 //    }
 
+    /**
+     * Eltávolítja magáról a rajta álló játékost
+     * @param player a mezőn álló játékos
+     */
     public void removeElement(Player player) {
         System.out.println("-->[Field :f1].removeElement(worker)");
     }
 
+    /**
+     * Eltávolítja a rajta álló tolható elemet
+     * @param pushable a mezőn álló tolható objektum
+     */
     public void removeElement(Pushable pushable) {
         System.out.println("-->[Field :f1].removeElement(box)");
     }
 
 
-
-    //itt adjuk meg milyen szomszedos mezo van
+    /**
+     * Megadja a szomszédos mezőket a kívánt irányban
+     * @param direction a kívánt irány
+     * @return szomszédos mező
+     */
     public Field getNeighbors(Direction direction) {
         Scanner infield = new Scanner(System.in);
         System.out.println("Milyen mezore lepsz: 1-Sima , 2-Hole, 3-TrapDoor, 4-Switch, 5-TargetField?");
@@ -115,20 +164,37 @@ public class Field {
             return fieldMap.get(direction);
     }
 
+    /**
+     * Beállítja a szomszédos mezőket a kívánt irányban
+     * @param direction a szomszédos mező iránya
+     * @param field a szomszédos mező
+     */
     public void setNeighbors(Direction direction, Field field) {
 
     }
 
+    /**
+     * A mezőre elem lépett
+     * @param element a mezőre lépett elem
+     */
     public void stepOnIt(Element element) {
             System.out.println("-->[Field :f2].stepOnIt(element)");
             System.out.println("<----");
     }
 
+    /**
+     * A mezőre tolható elem lépett
+     * @param pushable a mezőre lépett tolható elem
+     */
     public void stepOnIt(Pushable pushable) {
         System.out.println("-->[Field :f2].stepOnIt(box)");
         System.out.println("<----");
     }
 
+    /**
+     * A mezőre játékos lépett
+     * @param player a mezőre lépett játékos
+     */
     public void stepOnIt(Player player) {
         System.out.println("-->[Field :f2].stepOnIt(worker)");
         System.out.println("<----");
