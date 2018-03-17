@@ -2,7 +2,8 @@ package com.model;
 
 public class TargetField extends Field {
 
-    Player player;
+    Player player = new Worker() ;
+
 
     public void increasePoint() {
 
@@ -18,9 +19,8 @@ public class TargetField extends Field {
 
     }
 
-    //Itt nem lehet az Osbol orokolni mert ott Element van itt meg csak Pushablet var paramterkent
-    public void removeBox(Pushable pushable) {
-        removeElement(pushable);
+    public void removeElement(Pushable pushable) {
+        super.removeElement(pushable);
         player.addPoints(-10);
     }
 }

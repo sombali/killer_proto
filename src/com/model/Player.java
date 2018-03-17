@@ -9,12 +9,13 @@ public abstract class Player extends Element{
     }
 
     public void die() {
-        System.out.println("-->[Player].die");
+        System.out.println("----->[Player].die");
         System.out.println("YOU DIED!");
         System.out.println("<-----");
     }
 
     public void addPoints(int point) {
+        System.out.println("[Worker: w].addPoints(n)");
         this.point += point;
     }
 
@@ -29,17 +30,18 @@ public abstract class Player extends Element{
     //szekvencia alapjan kitoltottem @Bazsi
     //az egy dolog de ki is kene iratni draga Bazsi @Szili
     public boolean hit(Pushable pushable, Direction direction) {
+
         Field nextfield = getField().getNeighbors(direction);
         Element element = nextfield.getElement();
 
         if(element != null) {
             this.getField().removeElement(this);
             die();
+            return true;
         } else {
             step(nextfield);
             return true;
         }
-        return true;
     }
 
     public  boolean hit(Player player, Direction direction) {

@@ -2,17 +2,16 @@ package com.model;
 
 public class Switch extends Field {
 
-    private TrapDoor trapDoor;
+    private TrapDoor trapDoor = new TrapDoor();
 
     public TrapDoor getTrapDoor() {
         System.out.println("-->[Switch: s].getTrapDoor()");
-        return new TrapDoor();
+        return trapDoor;
     }
 
 
     @Override
     public void stepOnIt(Pushable pushable) {
-        System.out.println("LEPTEM TESOOOOOOOOOO");
         getTrapDoor().switchState();
         Element element = trapDoor.getElement();
 

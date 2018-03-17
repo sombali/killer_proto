@@ -19,11 +19,12 @@ public abstract class Pushable extends Element{
         boolean allowed = true;
         if(element1 != null) {
             allowed = element1.hit(this, direction);
-            if(allowed == true) {
+            if(allowed) {
                 step(nextField);
             }
         } else {
             step(nextField);
+            System.out.println("<--- true");
             return true;
         }
         System.out.println("<---" + allowed);
@@ -44,21 +45,21 @@ public abstract class Pushable extends Element{
         boolean allowed = true;
         if(element1 != null) {
             allowed = element1.hit(this, direction);
-            if(allowed == true) {
+            if(allowed) {
                 step(nextField);
             }
         } else {
             step(nextField);
+            System.out.println("<--- true");
             return true;
         }
-        System.out.println("<---" + allowed);
+        System.out.println("<--- " + allowed);
         return allowed;
     }
 
     //@Bazsi voltam, hozza ne nyulj kezed eltorom
     public void step(Field nextField) {
-        Field mytestfield = new Field();
-        mytestfield.removeElement(this);
+        getField().removeElement(this);
         nextField.acceptElement(this);
         stuck();
         nextField.stepOnIt(this);

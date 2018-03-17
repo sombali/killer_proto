@@ -47,7 +47,7 @@ public class Field {
 
     //@Bazsi voltam szotyola van fiukaaak
     public void acceptElement(Element element) {
-        System.out.println("-->[Field :f2].acceptElement(player)");
+        System.out.println("-->[Field :f2].acceptElement(element)");
         element.setField(this);
         System.out.println("<-----");
         setElement(element);
