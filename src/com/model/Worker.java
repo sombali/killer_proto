@@ -13,9 +13,9 @@ public class Worker extends Player {
         Element nextElement = nextfield.getElement();
 
         //Ez se fog majd kelleni de most KELL
-        nextElement.setTestField(nextfield);
+        nextfield.setElement(nextElement);
         if(nextElement != null) {
-            nextfield.setElement(nextElement);
+            nextElement.setTestField(nextfield);
         }
 
         boolean allow;
