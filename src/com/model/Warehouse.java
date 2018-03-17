@@ -8,12 +8,13 @@ import java.util.List;
 public class Warehouse {
     private int pushableBoxes;
     private List<Field> fields;
-    private List<Player> playerList= new ArrayList<>();
+    private List<Player> playerList;
 
 
     public void initialize() {
         System.out.println("Munkas beallitasa elso mezore: ");
         this.fields = new ArrayList<>();
+        this.playerList = new ArrayList<>();
         Field playerField = new Field();
         createPlayer();
         playerField.setElement(playerList.get(0));

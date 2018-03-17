@@ -10,7 +10,7 @@ public class TrapDoor extends Hole {
 
 
     @Override
-    public void removeElement(Player player) {
+    public void removeElement(Pushable pushable) {
         System.out.println("-->[Field :f2].removeElement(player)");
     }
 
@@ -31,7 +31,7 @@ public class TrapDoor extends Hole {
         System.out.println("Nyitva van a trapdoor? 1-Igen, 2-Nem");
         x = in.nextInt();
         if (x == 1) {
-            System.out.println("-->[Field f2].getElement()");
+            System.out.println("-->[Field :f2].getElement()");
             System.out.println("<--[return null]");
             return null;
         } else if (x == 2) {
@@ -44,11 +44,10 @@ public class TrapDoor extends Hole {
 
     public void switchState() {
         System.out.println("[TrapDoor :td].switchState()");
+        System.out.println("TrapDoor -> Megvaltozott a Trapdoor allapota!");
         if(state.equals(TrapDoorState.CLOSED)) {
-            System.out.println("TrapDoor -> OPENED");
             state = TrapDoorState.OPENED;
         } else {
-            System.out.println("TrapDoor -> OPENED");
             state = TrapDoorState.CLOSED;
         }
     }

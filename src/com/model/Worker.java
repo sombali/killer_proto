@@ -13,8 +13,8 @@ public class Worker extends Player {
         Element nextElement = nextfield.getElement();
 
         //Ez se fog majd kelleni de most KELL
+        nextElement.setTestField(nextfield);
         if(nextElement != null) {
-            nextElement.setTestField(nextfield);
             nextfield.setElement(nextElement);
         }
 

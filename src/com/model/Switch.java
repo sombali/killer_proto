@@ -9,7 +9,7 @@ public class Switch extends Field {
         return trapDoor;
     }
 
-    //@Bazsa vót
+
     @Override
     public void stepOnIt(Pushable pushable) {
         System.out.println("-->[Switch :s].stepOnIt()");
@@ -21,10 +21,10 @@ public class Switch extends Field {
         }
     }
 
-    //Ezis Bazsa
+
     @Override
     public void removeElement(Pushable pushable) {
-        System.out.println("-->[Switch :s].removeElement(pushable)");
+        System.out.println("-->[Switch :s].removeElement(box)");
         super.removeElement(pushable);
         trapDoor.switchState();
     }
