@@ -25,7 +25,7 @@ public abstract class Pushable extends Element{
             }
         } else {
             step(nextField);
-            System.out.println("<--- true" );
+            System.out.println("<--- true");
             return true;
         }
         System.out.println("<---" + " " + allowed);
@@ -48,7 +48,7 @@ public abstract class Pushable extends Element{
         boolean allowed = true;
         if(element1 != null) {
             allowed = element1.hit(this, direction);
-            if(allowed == true) {
+            if(allowed) {
                 step(nextField);
             }
         } else {

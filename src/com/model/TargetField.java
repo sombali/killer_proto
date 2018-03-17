@@ -10,7 +10,6 @@ public class TargetField extends Field {
         player.addPoints(10);
     }
 
-    @Override
     public void removeElement(Pushable pushable) {
         System.out.println("[TargetField :targetField].removeElement(box)");
         super.removeElement(pushable);
