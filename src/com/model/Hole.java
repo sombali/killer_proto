@@ -13,16 +13,18 @@ public class Hole extends Field{
         super.stepOnIt(element);
     }
 
-    //Na itt vagyunk szarba mert nem ismeri a warehouset a Field... @Bazsi
     @Override
     public void stepOnIt(Pushable pushable) {
+        System.out.println("->[Hole: h].stepOnIt(box)");
+        System.out.println("Elpusztult a doboz!");
         removeElement(pushable);
-
+        new Warehouse().setPushableBoxes(-1);
+        System.out.println("<-");
     }
 
     @Override
     public void stepOnIt(Player player) {
-        System.out.println("->[Hole: h].stepOnIt(player)");
+        System.out.println("->[Hole: h].stepOnIt(worker)");
         removeElement(player);
         player.die();
         System.out.println("<-");

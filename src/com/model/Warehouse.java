@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
-    private int pushableBoxes;
+    private int pushableBoxes = 10;
     private List<Field> fields;
     private List<Player> playerList;
 
@@ -35,7 +35,9 @@ public class Warehouse {
     }
 
     public void setPushableBoxes(int num) {
+        System.out.println("-->[Warehouse].setPushableBoxes(num)");
         pushableBoxes -= num;
+        System.out.println("<--");
     }
 
     public List<Player> getPlayerList() {
