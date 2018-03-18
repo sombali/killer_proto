@@ -12,17 +12,17 @@ import java.util.List;
 public class Warehouse {
 
     /**
-     * @param pushableBoxes A játékban szereplő, még tolható ládák száma.
+     * A játékban szereplő, még tolható ládák száma.
      */
     private int pushableBoxes = 10;
 
     /**
-     * @param fields A pályán található mezőket tárolja(Field,Switch,TrapDoor,Wall vagy Hole)
+     * A pályán található mezőket tárolja(Field,Switch,TrapDoor,Wall vagy Hole)
      */
     private List<Field> fields;
 
     /**
-     * @param playerList A játékosokat tároló lista.
+     * A játékosokat tároló lista.
      */
     private List<Player> playerList;
 
