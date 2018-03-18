@@ -101,11 +101,7 @@ public class Field {
         System.out.println("<-----");
         setElement(element);
     }
-
-//    public void removeElement(Element element) {
-//        System.out.println("-->[Field :f1].removeElement(player)");
-//    }
-
+    
     /**
      * Eltávolítja magáról a rajta álló játékost
      * @param player a mezőn álló játékos
@@ -148,7 +144,6 @@ public class Field {
             System.out.println("<--[TrapDoor :td]");
             return fieldMap.get(direction);
         }
-        //@Ákos
         if(pelda==4) {
             fieldMap.put(direction, new Switch());
             System.out.println("<--[Switch :sw]");

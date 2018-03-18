@@ -35,9 +35,12 @@ public class TrapDoor extends Hole {
      */
     @Override
     public void removeElement(Pushable pushable) {
-        System.out.println("-->[Field :f2].removeElement(player)");
+        System.out.println("-->[TrapDoor :td].removeElement(pushable)");
     }
-
+    @Override
+    public void removeElement(Player player) {
+        System.out.println("-->[TrapDoor :td].removeElement(player)");
+    }
     /**
      *
      * @param player játékos, ami a mezőre lépett

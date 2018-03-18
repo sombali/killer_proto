@@ -29,7 +29,7 @@ public abstract class Player extends Element{
      * Ha meghal a játékos(pl: lyukba lép) akkor hívódik meg.
      */
     public void die() {
-        System.out.println("-->[Worker :w].die");
+        System.out.println("-->[Worker :w].die()");
         System.out.println("YOU DIED!");
         System.out.println("<-----");
     }
@@ -74,7 +74,7 @@ public abstract class Player extends Element{
      * @return true-val tér vissza ha a lépés sikeres volt, false-szal ha nem.
      */
     public boolean hit(Pushable pushable, Direction direction) {
-        System.out.println("[Worker :w].hit(box, direction)");
+        System.out.println("-->[Worker :w].hit(box, direction)");
         Field nextfield = getField().getNeighbors(direction);
         Element element = nextfield.getElement();
 
@@ -84,6 +84,7 @@ public abstract class Player extends Element{
             return true;
         } else {
             step(nextfield);
+            System.out.println("<-- true");
             return true;
         }
     }
@@ -93,9 +94,11 @@ public abstract class Player extends Element{
      *
      * @param player Egy játékos objektum
      * @param direction Egy adott irány
-     * @return true-val tér vissza ha a lépés sikeres volt, false-szal ha nem.
+     * @return false-al tér vissza
      */
     public  boolean hit(Player player, Direction direction) {
+        System.out.println("-->[Worker :w].hit(worker, direction)");
+        System.out.println("<-- false == Nem tudsz ide lepni!");
         return false;
     }
 
@@ -111,7 +114,6 @@ public abstract class Player extends Element{
         System.out.println("->[Worker :w].step(f2)");
         field.removeElement(this);
         nextField.acceptElement(this);
-      //this.setField(nextField);
         nextField.stepOnIt(this);
         System.out.println("<-");
     }

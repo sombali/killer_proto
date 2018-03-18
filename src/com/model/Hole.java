@@ -21,6 +21,17 @@ public class Hole extends Field{
      * @param element
      */
     @Override
+    public void removeElement(Player player)
+    {
+        System.out.println("-->[Hole: h].removeElement(worker)");
+    }
+
+    @Override
+    public void removeElement(Pushable pushable)
+    {
+        System.out.println("-->[Hole: h].removeElement(box)");
+    }
+    @Override
     public void stepOnIt(Element element) {
         super.stepOnIt(element);
     }
