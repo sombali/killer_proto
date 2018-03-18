@@ -6,7 +6,7 @@ package com.model;
 public class Box extends Pushable{
 
     /**
-     *
+     * Játékos szeretné tolni tovább a ládát
      * @param player játékos, ami a tolható elem helyére szeretne lépni
      * @param direction a játékos haladási iránya
      * @return true-val tér vissza ha a lépés sikeres volt, false-szal ha nem
@@ -17,6 +17,7 @@ public class Box extends Pushable{
     }
 
     /**
+     * Egy tolható objektum tolja tovább a ládát
      * @param pushable az új elem, ami a jelenlegi tolható elem helyére szeretne lépni
      * @param direction az elem továbbhaladási iránya
      * @return true-val tér vissza ha a lépés sikeres volt, false-szal ha nem
