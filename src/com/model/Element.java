@@ -6,12 +6,12 @@ package com.model;
  */
 public class Element {
     /**
-     * @param field Az a maző amin az adott Element áll.
+     * Az a maző amin az adott Element áll.
      */
     Field field;
 
     /**
-     *
+     * Megadja az elem mezőjét
      * @return Visszatér azzal a mezővel amin a játékos jelen pillanatban áll.
      */
     public Field getField() {
@@ -19,9 +19,9 @@ public class Element {
     }
 
     /**
-     *
-     * @param field Egy mező objektum
      * A metódus az adott Element jelenlegi mezőjét hivatott beállítani.
+     * @param field Egy mező objektum
+     * 
      */
     public void setField(Field field) {
         System.out.println("-->.setField(f2) = Sikeres lepes");
@@ -29,11 +29,9 @@ public class Element {
     }
 
     /**
-     *
-     * @param field Egy mező objektum.
      * A metódus az adott Element jelenlegi mezőjét hivatott beállítani.
+     * @param field Egy mező objektum
      */
-    //ezt a szkeleton utan torolni kell!!!!
     public void setTestField(Field field){
         this.field = field;
     }
