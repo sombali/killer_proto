@@ -8,17 +8,17 @@ import java.util.Scanner;
 public class TrapDoor extends Hole {
 
     /**
-     * @param aSwitch A TrapDoorhoz tartozó, őt nyitó/záró kapcsoló(Switch).
+     * Switch A TrapDoorhoz tartozó, őt nyitó/záró kapcsoló(Switch).
      */
     private Switch aSwitch;
 
     /**
-     * @param state A TrapDoor éppeni állatopát tárolja.
+     * A TrapDoor éppeni állatopát tárolja.
      */
     private TrapDoorState state = TrapDoorState.CLOSED;
 
     /**
-     * @param in A tesztesetek beolvasását teszi lehetővé.
+     * A tesztesetek beolvasását teszi lehetővé.
      *
      */
     Scanner in = new Scanner(System.in);
@@ -26,27 +26,31 @@ public class TrapDoor extends Hole {
     /**
      *   A felhasználótól bekért teszteset választásokat tárolja.
      */
-    int x;
+    private int x;
 
     /**
-     *
+     * Ezt az objektum mezőről való eltávolítását végző a metódus.
      * @param pushable a mezőn álló tolható objektum
-     *  Ezt az objektum mezőről való eltávolítását végzi a metódus.
+     *  
      */
     @Override
     public void removeElement(Pushable pushable) {
         System.out.println("-->[TrapDoor :td].removeElement(pushable)");
     }
+    
+    /**
+     * Eltávolítja a rajta álló játékost
+     * @param player mezőn álló játékos
+     */
     @Override
     public void removeElement(Player player) {
         System.out.println("-->[TrapDoor :td].removeElement(player)");
     }
     /**
-     *
-     * @param player játékos, ami a mezőre lépett
      * Ez a függvény fogja kiváltani azt a hatást ami történik mikor rálép egy játékos.
      * Ha a Trapdoor nyitva van a játékos meghal, ha nem akkor szimpla mezőként funkcionál.
-     *
+     * @param player játékos, ami a mezőre lépett
+     * 
      */
     @Override
     public void stepOnIt(Player player) {
@@ -61,8 +65,8 @@ public class TrapDoor extends Hole {
     }
 
     /**
-     *
-     * @return visszatér azzal az Element-tel ami a TrapDooron áll.
+     * 
+     * @return az Element ami a TrapDooron áll.
      */
     @Override
     public Element getElement() {
