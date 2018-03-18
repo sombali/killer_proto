@@ -41,9 +41,9 @@ public class Warehouse {
     }
 
     /**
-     *
-     * @param field Field típusú objektum,
-     *              hozzáadja az átvett objektumot a mezőket tartalmazó listához.
+     * Hozzáadja az átvett objektumot a mezőket tartalmazó listához.
+     * @param field Field típusú objektum
+     *             
      */
     public void addField(Field field) {
         this.fields.add(field);
@@ -57,15 +57,16 @@ public class Warehouse {
     }
 
     /**
-     * A metódus eltávolít egy játékost a pályáról(pl: lyukba lépett).
+     * Eltávolítja a játékost a pályáról
+     * @param player játékos
      */
     public void removePlayer(Player player) { playerList.remove(player);}
 
     /**
-     *
+     * A metódus fő célja, hogy a még tolható ládák számát folyamtosan állítani tudja,
+     * hiszen ha már ez a szám 0 akkor vége a játéknak.
      * @param num Egy integer, ami a még tolható ládák számát adja meg.
-     *            A metódus fő célja, hogy a még tolható ládák számát folyamtosan állítani tudja,
-     *            hiszen ha már ez a szám 0 akkor vége a játéknak.
+     *           
      */
     public void setPushableBoxes(int num) {
         System.out.println("-->[Warehouse].setPushableBoxes(num)");
@@ -74,8 +75,8 @@ public class Warehouse {
     }
 
     /**
-     *
-     * @return visszatér a játékosokat tartalmazó listával.
+     * Megadja a játékosok listáját
+     * @return játékosokat tartalmazó lista
      */
     public List<Player> getPlayerList() {
         return playerList;
