@@ -2,8 +2,16 @@ package com.model;
 
 import java.util.Scanner;
 
+/**
+ * A Main osztály a main metódus megvalósításáért felelős.
+ */
 public class Main {
-
+    /**
+     *
+     * @param args
+     * A program main függvénye, itt történnek a játék során létrejövő objektumok példányosításai, függvényhívásai,
+     * illetve egyéb műveletei.
+     */
     public static void main(String[] args) {
         //Ez csak egy vazlat majd szepitgetjuk.
         //Field pelda=new Field();//Letrehozom a kezdo mezot amin van a munkas
