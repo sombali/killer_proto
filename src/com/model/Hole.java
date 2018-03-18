@@ -7,7 +7,7 @@ package com.model;
 public class Hole extends Field{
 
     /**
-     * Megadja a rajta találhat elemet
+     * Megadja a rajta található elemet
      * @return null
      */
     @Override
@@ -17,8 +17,8 @@ public class Hole extends Field{
     }
 
     /**
-     *
-     * @param element
+     * Eltávolítja magáról a játékost
+     * @param player 
      */
     @Override
     public void removeElement(Player player)
@@ -26,11 +26,19 @@ public class Hole extends Field{
         System.out.println("-->[Hole: h].removeElement(worker)");
     }
 
+    /**
+     * Eltávolítja magáról a tolható elemet
+     * @param pushable tolható elem
+     */
     @Override
     public void removeElement(Pushable pushable)
     {
         System.out.println("-->[Hole: h].removeElement(box)");
     }
+    /**
+     * Egy elem lép a mezőre
+     * @param element
+     */
     @Override
     public void stepOnIt(Element element) {
         super.stepOnIt(element);
