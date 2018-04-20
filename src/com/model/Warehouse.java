@@ -35,6 +35,7 @@ public class Warehouse {
         this.playerList = new ArrayList<>();
         Field playerField = new Field();
         createPlayer();
+        createPlayer();
         playerField.setElement(playerList.get(0));
         this.fields.add(playerField);
         playerList.get(0).setField(playerField);
@@ -47,6 +48,10 @@ public class Warehouse {
      */
     public void addField(Field field) {
         this.fields.add(field);
+    }
+
+    public int getPushableBoxes() {
+        return pushableBoxes;
     }
 
     /**

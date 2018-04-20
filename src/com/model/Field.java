@@ -27,6 +27,19 @@ public class Field {
     private Map<Direction, Field> fieldMap = new HashMap<>();
 
     /**
+     * A mezon levo Tool.
+     */
+    private Tools tools;
+
+    public Tools getTools() {
+        return tools;
+    }
+
+    public void setTools(Tools tools) {
+        this.tools = tools;
+    }
+
+    /**
      * A mezőt tartalmazó pálya
      */
     private Warehouse warehouse;
