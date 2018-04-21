@@ -1,11 +1,14 @@
 package com.model;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Az összes (még jövőben lehetséges) játékos közös attribútimait, metódusait foglalja magában.
  */
 
 public abstract class Player extends Element{
-
     /**
      * @param name A játékos nevét tárolja.
      */
@@ -17,12 +20,78 @@ public abstract class Player extends Element{
     private int point;
 
     /**
+     * A jatekos ereje.
+     */
+    private int strength;
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    /**
+     * A jatekos altal tartalmazott mezek.
+     */
+    private List<Honey> honey = new ArrayList<>();
+
+    /**
+     * A jatekos altal tartalmazott olajak.
+     */
+    private List<Oil> oil = new ArrayList<>();
+
+    public Player() {
+        for(int i = 0; i < 3; i++) {
+            honey.add(new Honey());
+            oil.add(new Oil());
+        }
+    }
+
+    /**
+     * Visszaad egy mezet es torli a listabol.
+     * @return mez
+     */
+    public Honey getHoney() {
+        Honey h = honey.get(0);
+        honey.remove(0);
+        return h;
+    }
+
+    /**
+     * Visszaad egy olajat es torli a listabol.
+     * @return olaj
+     */
+    public Oil getOil() {
+        Oil o = oil.get(0);
+        oil.remove(0);
+        return o;
+    }
+    //mezek szamanak kiiratasahoz kell
+    public List<Honey> getHoneyList() {
+        return honey;
+    }
+    //olajak szamanak kiiratasahoz kell
+    public List<Oil> getOilList() {
+        return oil;
+    }
+
+    /**
      *
      * @param direction Az adott irány amelybe a játékos lépni fog.
      *                  A játékos mozgását valósítja meg.
      */
     public void move(Direction direction) {
 
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public String getName() {
+        return name;
     }
 
     /**
@@ -32,6 +101,9 @@ public abstract class Player extends Element{
         System.out.println("-->[Worker :w].die()");
         System.out.println("YOU DIED!");
         System.out.println("<-----");
+
+        //ezt vagy nullozni kene vagy pedig ismernie kene a warehouset es a removeplayert meghivni.
+
     }
 
     /**

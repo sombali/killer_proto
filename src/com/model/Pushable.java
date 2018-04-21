@@ -10,6 +10,10 @@ public abstract class Pushable extends Element {
      */
     private boolean stucked;
 
+    /**
+     * A mozgathato objektum sulya.
+     */
+    private int weight;
 
     /**
      * Játékos szeretné tolni a tolható elemet a továbbhaladás irányába.
